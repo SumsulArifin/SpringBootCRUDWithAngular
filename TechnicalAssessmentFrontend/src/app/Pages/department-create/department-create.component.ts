@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { DepartmentService } from './department-service.service';
+import { DepartmentService } from '../../service/department-service.service';
 import { Router } from '@angular/router';
 import { DepartmentModel } from './department-model.model';
 
@@ -15,6 +15,8 @@ export class DepartmentCreateComponent {
 
 constructor(private departmentService:DepartmentService,private router:Router){}
 
+errors:any=[];
+
   deptartmentM!: DepartmentModel;
 submited:boolean=false;
 ngOnInit():void{
@@ -28,8 +30,21 @@ addNewDepartment(){
     result =>{
       this.submited=true;
       this.departmentFrom.reset();
+      this.gotodepartmentList();
     }
-  )
+  ),
+  (err:any)=>
+  {
+    this.errors=err.error.errors;
+  }
+  
 }
+
+gotodepartmentList() {
+  this.router.navigate(['department']);
+}
+
+
+
 
 }

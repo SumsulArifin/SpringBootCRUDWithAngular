@@ -8,9 +8,8 @@
             </div>
             <div class="card-body">
                 <h5 class="card-title text-center"> List Of Department </h5>
-                <!-- New Salary Grade Form Elements -->
-                <table class="table">
-                    <thead>
+                <table class="table mx-auto ">
+                    <thead class=" mx-auto ">
                         <th > Name </th>
                         <th> Status </th>
                         <th> Action </th>
@@ -18,12 +17,12 @@
                     </thead>
                     <tbody>
                     <tr *ngFor="let dep of deparmentList ">
-                        <td>{{dep.name}}</td>
+                        <td>{{dep.deptName}}</td>
                         <td>{{dep.active}}</td>
                         
                         <td>
-                            <a class="btn btn-danger" >Delete</a>
-                            <a class="btn btn-warning">Update</a>
+                            <a class="btn btn-danger" (click)="deleteByID(dep.deptId)">Delete</a>
+                            <a class="btn btn-warning" (click)="updateDepartment(dep.deptId,dep)">Update</a>
                         </td>
                     </tr>
                 </table>

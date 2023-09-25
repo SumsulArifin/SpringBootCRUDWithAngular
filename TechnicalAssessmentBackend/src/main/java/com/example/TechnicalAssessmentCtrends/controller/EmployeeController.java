@@ -9,9 +9,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
+@RestController
+@RequestMapping("/employee")
+@CrossOrigin(originPatterns = {"*"})
 public class EmployeeController {
     @Autowired
     @SuppressWarnings(Message.AUTOWIRED_OK)
@@ -20,7 +24,7 @@ public class EmployeeController {
     // Create a new Employee
 
     @PostMapping("/addNewEmployee")
-    public ResponseEntity<MessageResponse> saveEmployee(@RequestBody EmployeeDTO employeeDTO) {
+    public ResponseEntity<MessageResponse> saveEmployee(@RequestBody @Valid EmployeeDTO employeeDTO) {
         MessageResponse newEmployee = employeeService.saveEmployee(employeeDTO);
         return new ResponseEntity<>(newEmployee, HttpStatus.CREATED);
     }

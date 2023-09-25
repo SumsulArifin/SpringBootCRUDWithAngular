@@ -22,7 +22,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     public MessageResponse saveDepartment(DepartmentDTO departmentDTO) {
         Department department = new Department();
 
-        department.setName(departmentDTO.getName());
+        department.setDeptName(departmentDTO.getDeptName());
         department.setActive(departmentDTO.isActive());
 
         departmentRepository.save(department);
@@ -45,7 +45,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
         if (result.isPresent()) {
             Department department = result.get();
-            department.setName(departmentDTO.getName());
+            department.setDeptName(departmentDTO.getDeptName());
             department.setActive(departmentDTO.isActive());
 
             departmentRepository.save(department);

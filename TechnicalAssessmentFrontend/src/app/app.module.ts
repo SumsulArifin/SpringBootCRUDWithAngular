@@ -10,6 +10,9 @@ import { DepartmentComponent } from './Pages/department/department.component';
 import { DepartmentCreateComponent } from './Pages/department-create/department-create.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { EmployeeCreateComponent } from './Pages/employee-create/employee-create.component';
+import { DepartmentEditComponent } from './Pages/department-edit/department-edit.component';
+import { EmployeeEditComponent } from './Pages/employee-edit/employee-edit.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     EmployeeComponent,
     DepartmentComponent,
-    DepartmentCreateComponent
+    DepartmentCreateComponent,
+    EmployeeCreateComponent,
+    DepartmentEditComponent,
+    EmployeeEditComponent
   ],
   imports: [
     BrowserModule,

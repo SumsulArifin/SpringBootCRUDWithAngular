@@ -44,7 +44,7 @@ public class DepartmentController {
     }
 
     // Department Status Change API
-    @PutMapping("/statusChange/{divisionId}")
+    @PutMapping("/statusChange/{deptId}")
     public ResponseEntity<Optional<Department>> changeDepartmentStatus(@PathVariable int deptId, @RequestBody  DepartmentDTO departmentDTO) {
         Optional<Department> divisionStatus = departmentService.updateDepartmentStatus(deptId, departmentDTO);
         return new ResponseEntity<Optional<Department>>(divisionStatus, HttpStatus.OK);

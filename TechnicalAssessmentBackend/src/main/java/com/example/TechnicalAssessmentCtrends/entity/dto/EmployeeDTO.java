@@ -20,7 +20,7 @@ public class EmployeeDTO {
     @NonNull
     @Column(length = 35)
     private String name;
-    private LocalDate dob;
+    private String dob;
     @Enumerated(EnumType.STRING)
     private Gender gender;
     private int mobile;
