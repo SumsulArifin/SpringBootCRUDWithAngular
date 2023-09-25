@@ -3,10 +3,10 @@ import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DepartmentService } from 'src/app/service/department-service.service';
 import { EmployeeService } from 'src/app/service/employee-service.service';
-import { Department } from '../model/employee';
+import { Department } from '../../model/employee';
 import { NgForm } from '@angular/forms';
-import { Employee } from '../model/employee.model';
-import { ApiRespons } from '../model/api-respons';
+import { Employee } from '../../model/employee.model';
+import { ApiRespons } from '../../model/api-respons';
 
 
 @Component({

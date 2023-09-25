@@ -6,7 +6,7 @@ import { EmployeeService } from '../../service/employee-service.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
-import { Department } from '../model/department.model';
+import { Department } from '../../model/department.model';
 
 
 @Component({

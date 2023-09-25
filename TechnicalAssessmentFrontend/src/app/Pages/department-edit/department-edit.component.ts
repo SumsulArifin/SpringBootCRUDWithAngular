@@ -1,10 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Department } from '../model/department.model';
+import { Department } from '../../model/department.model';
 import { DepartmentService } from 'src/app/service/department-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { ApiRespons } from '../model/api-respons';
+import { ApiRespons } from '../../model/api-respons';
 
 @Component({
   selector: 'app-department-edit',

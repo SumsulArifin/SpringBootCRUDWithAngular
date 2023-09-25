@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { ApiRespons } from '../Pages/model/api-respons';
-import { Employee } from '../Pages/model/employee';
+import { ApiRespons } from '../model/api-respons';
+import { Employee } from '../model/employee';
 
 
 

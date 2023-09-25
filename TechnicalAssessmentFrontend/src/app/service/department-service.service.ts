@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 
 import {Observable} from "rxjs";
 import {DepartmentModel } from '../Pages/department-create/department-model.model';
-import { ApiRespons } from '../Pages/model/api-respons';
+import { ApiRespons } from '../model/api-respons';
 
 const baseURl = "http://localhost:8080/department";
 

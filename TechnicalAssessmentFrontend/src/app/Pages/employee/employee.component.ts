@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { EmployeeService } from '../../service/employee-service.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { Employee } from '../model/employee';
+import { Employee } from '../../model/employee';
 
 @Component({
   selector: 'app-employee',
