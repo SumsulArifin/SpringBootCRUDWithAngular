@@ -4,9 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.lang.NonNull;
 
-import java.time.LocalDate;
 @Entity
 @Data
 @NoArgsConstructor
@@ -16,9 +14,9 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int empId;
-
+    @Column(nullable = false, length = 4,unique = true)
     private int code;
-
+    @Column(nullable = false, length = 35)
     private String name;
     private String dob;
     @Enumerated(EnumType.STRING)

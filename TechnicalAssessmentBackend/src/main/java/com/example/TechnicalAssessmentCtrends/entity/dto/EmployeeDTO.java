@@ -6,15 +6,15 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.lang.NonNull;
 
-import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class EmployeeDTO {
+    @Column(nullable = false, length = 4,unique = true)
     private int code;
+    @Column(nullable = false, length = 35)
     private String name;
     private String dob;
     @Enumerated(EnumType.STRING)
