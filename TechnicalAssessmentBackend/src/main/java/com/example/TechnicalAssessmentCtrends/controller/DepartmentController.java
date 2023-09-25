@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 @RestController
@@ -60,8 +59,8 @@ public class DepartmentController {
     // API to retrieve Department by id
     @GetMapping("/getDepartmentById/{deptId}")
     public ResponseEntity<Department> getDepartmentById(@PathVariable("deptId") int deptId) {
-        Department divisionById = departmentService.findDepartmentById(deptId);
-        return new ResponseEntity<>(divisionById, HttpStatus.OK);
+        Department departmentById = departmentService.findDepartmentById(deptId);
+        return new ResponseEntity<>(departmentById, HttpStatus.OK);
     }
 
 

@@ -14,11 +14,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class EmployeeDTO {
-    @NonNull
-    @Column(unique = true,length = 4)
     private int code;
-    @NonNull
-    @Column(length = 35)
     private String name;
     private String dob;
     @Enumerated(EnumType.STRING)

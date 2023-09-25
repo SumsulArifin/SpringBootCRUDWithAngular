@@ -13,36 +13,35 @@ export class DepartmentCreateComponent {
   @ViewChild("departmentFrom")
   departmentFrom!: NgForm;
 
-constructor(private departmentService:DepartmentService,private router:Router){}
+  constructor(private departmentService: DepartmentService, private router: Router) { }
 
-errors:any=[];
+  errors: any = [];
 
   deptartmentM!: DepartmentModel;
-submited:boolean=false;
-ngOnInit():void{
+  submited: boolean = false;
+  ngOnInit(): void {
 
-}
-
-addNewDepartment(){
-  this.deptartmentM=this.departmentFrom.value;
-  console.log(this.deptartmentM)
-  this.departmentService.createNewDeptment(this.deptartmentM).subscribe(
-    result =>{
-      this.submited=true;
-      this.departmentFrom.reset();
-      this.gotodepartmentList();
-    }
-  ),
-  (err:any)=>
-  {
-    this.errors=err.error.errors;
   }
-  
-}
 
-gotodepartmentList() {
-  this.router.navigate(['department']);
-}
+  addNewDepartment() {
+    this.deptartmentM = this.departmentFrom.value;
+    console.log(this.deptartmentM)
+    this.departmentService.createNewDeptment(this.deptartmentM).subscribe(
+      result => {
+        this.submited = true;
+        this.departmentFrom.reset();
+        this.gotodepartmentList();
+      }
+    ),
+      (err: any) => {
+        this.errors = err.error.errors;
+      }
+
+  }
+
+  gotodepartmentList() {
+    this.router.navigate(['department']);
+  }
 
 
 

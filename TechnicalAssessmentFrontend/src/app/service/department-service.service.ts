@@ -3,7 +3,6 @@ import {HttpClient} from "@angular/common/http";
 
 import {Observable} from "rxjs";
 import {DepartmentModel } from '../Pages/department-create/department-model.model';
-import { Department } from '../Pages/model/department.model';
 import { ApiRespons } from '../Pages/model/api-respons';
 
 const baseURl = "http://localhost:8080/department";
@@ -43,5 +42,9 @@ export class DepartmentService {
  // update Department  by ID
  updateDepartment(deptId: any, dept: any): Observable<any> {
   return this.http.put<any>(baseURl+'/getDepartmentById/'+deptId, dept);
+}
+
+findDepartmentById(deptId: any): Observable<any>{
+  return this.http.get(baseURl+'/getDepartmentById/'+deptId)
 }
 }

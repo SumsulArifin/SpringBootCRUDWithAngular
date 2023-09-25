@@ -9,8 +9,7 @@ import lombok.NonNull;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DepartmentDTO {
-    @NonNull
     private String deptName;
-    @NonNull
+
     private boolean active;
 }

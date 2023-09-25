@@ -26,11 +26,10 @@
                         <td>{{emp.dob}}</td>
                         <td>{{emp.gender}}</td>
                         <td>{{emp.mobile}}</td>
-                    
-                        
+                        <td>{{emp.department.deptId}}</td>
                         <td>
-                            <a class="btn btn-danger" >Delete</a>
-                            <a class="btn btn-warning">Update</a>
+                            <a class="btn btn-danger" (click)="deleteByID(emp.empId)">Delete</a>
+                            <a class="btn btn-warning" (click)="updateEmployee(emp.empId)">Update</a>
                         </td>
                     </tr>
                 </tbody>

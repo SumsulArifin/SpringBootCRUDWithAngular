@@ -27,18 +27,11 @@ export class DepartmentComponent implements OnInit{
       result=> this.deparmentList=result
     )
   }
-
-  updateDepartment(deptId:any,dept:any){
-    this.service.updateDepartment(deptId,dept).subscribe(
-      () => {
-        this.router.navigate(['/department/edit']);
-      },
-      (error) => {
-        console.error('Error updating item:', error);
-      }
-    );
-  }
-
+  updateDepartment(deptId:any){
+    return this.router.navigate(['departmentEdit', deptId]);
+    console.log(deptId);
+    
+}
  
   deleteByID(deptId: any) {
     this.service.deleteDepartment(deptId).subscribe(

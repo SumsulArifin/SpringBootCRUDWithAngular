@@ -10,20 +10,37 @@ import { Employee } from '../model/employee';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent {
-
-  employeeList!:Employee[];
-  constructor(private empService:EmployeeService ,private router:Router,
-    private http:HttpClient){}
+  status = false;
+  employeeList!: Employee[];
+  constructor(private empService: EmployeeService, private router: Router,
+    private http: HttpClient) { }
 
 
   ngOnInit(): void {
     this.getAllemp();
   }
 
-  getAllemp(){
+  getAllemp() {
     this.empService.getALlEmployee().subscribe(
-      result=> this.employeeList=result
+      result => this.employeeList = result
     )
   }
+
+
+  deleteByID(empId: any) {
+    this.empService.deleteEmployee(empId).subscribe(
+      result => {
+        this.status = true;
+
+      }
+    )
+    console.log(this.status)
+  }
+
+  updateEmployee(empId:any){
+    return this.router.navigate(['employeeEdit', empId]);
+    console.log(empId);
+    
+}
 
 }

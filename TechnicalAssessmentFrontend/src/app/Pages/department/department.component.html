@@ -1,34 +1,31 @@
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h3>Create Department</h3>
+            <a routerLink="/department/create" class="btn btn-success float-end">Add New Department</a>
 
-    <div class="container mt-5">
-        <div class="card">
-            <div class="card-header">
-                <h3>Create Department</h3>
-                <a routerLink="/department/create" class="btn btn-success float-end">Add New Department</a>
-                
-            </div>
-            <div class="card-body">
-                <h5 class="card-title text-center"> List Of Department </h5>
-                <table class="table mx-auto ">
-                    <thead class=" mx-auto ">
-                        <th > Name </th>
-                        <th> Status </th>
-                        <th> Action </th>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title text-center"> List Of Department </h5>
+            <table class="table mx-auto ">
+                <thead class=" mx-auto ">
+                    <th> Name </th>
+                    <th> Status </th>
+                    <th> Action </th>
 
-                    </thead>
-                    <tbody>
+                </thead>
+                <tbody>
                     <tr *ngFor="let dep of deparmentList ">
                         <td>{{dep.deptName}}</td>
                         <td>{{dep.active}}</td>
-                        
+
                         <td>
                             <a class="btn btn-danger" (click)="deleteByID(dep.deptId)">Delete</a>
-                            <a class="btn btn-warning" (click)="updateDepartment(dep.deptId,dep)">Update</a>
+                            <a class="btn btn-warning" (click)="updateDepartment(dep.deptId)">Update</a>
                         </td>
                     </tr>
-                </table>
+            </table>
 
-            </div>
         </div>
     </div>
-
-
+</div>
